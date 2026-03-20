@@ -1,25 +1,22 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.demo.repository.StudentRepository;
 
 @Controller
 public class StudentController {
 
+    @Autowired
+    private StudentRepository repo;
+
     @GetMapping("/students")
     public String showStudents(Model model) {
 
-        // Temporary dummy data (no database)
-        List<String> students = new ArrayList<>();
-        students.add("John");
-        students.add("David");
-        students.add("Chandru");
-
-        model.addAttribute("students", students);
+        model.addAttribute("students", repo.findAll());
 
         return "students";
     }
