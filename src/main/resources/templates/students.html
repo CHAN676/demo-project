@@ -22,22 +22,13 @@
             <thead class="table-dark">
                 <tr>
                     <th>Name</th>
-                    <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <!-- LOOP ONLY ONCE -->
+                <!-- CORRECT LOOP -->
                 <tr th:each="s : ${students}">
-                    <td th:text="${s.name}"></td>
-
-                    <td>
-                        <!-- ID Card Button -->
-                        <a th:href="@{/idcard/{name}(name=${s.name})}" 
-                           class="btn btn-success btn-sm">
-                           ID Card
-                        </a>
-                    </td>
+                    <td th:text="${s}"></td>
                 </tr>
             </tbody>
 
