@@ -13,11 +13,16 @@ public class StudentController {
     @Autowired
     private StudentRepository repo;
 
+    // ✅ HOME PAGE
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
+    // ✅ STUDENTS PAGE
     @GetMapping("/students")
     public String showStudents(Model model) {
-
         model.addAttribute("students", repo.findAll());
-
         return "students";
     }
 }
