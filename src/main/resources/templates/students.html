@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Students</title>
-</head>
 <body>
 
-<h2>Students List</h2>
+<h2>Students</h2>
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-    </tr>
-
-    <tr th:each="s : ${students}">
-        <td th:text="${s.id}"></td>
-        <td th:text="${s.name}"></td>
-        <td th:text="${s.email}"></td>
-    </tr>
-
-</table>
+<ul>
+    <li th:each="s : ${students}" th:text="${s.name}"></li>
+</ul>
 
 </body>
 </html>
