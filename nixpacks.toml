@@ -5,4 +5,4 @@ nixPkgs = ["jdk17", "maven"]
 cmds = ["mvn clean package -DskipTests"]
 
 [start]
-cmd = "java -jar target/demo-0.0.1-SNAPSHOT.jar"
+cmd = "java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar"
