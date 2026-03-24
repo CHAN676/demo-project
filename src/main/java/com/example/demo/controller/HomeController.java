@@ -1,13 +1,11 @@
-package com.example.demo.controller;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-@Controller
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class HomeController {
 
     @GetMapping("/")
-    @ResponseBody
     public String home() {
-        return "App is running 🚀";
+        return "SUCCESS 🚀 APP WORKING";
     }
 }
